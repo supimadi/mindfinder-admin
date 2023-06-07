@@ -47,13 +47,13 @@ class SettingDataStore(private val prefDataStore: DataStore<Preferences>) : Pref
         }
     }
 
-    override fun getString(key: String?, defValue: String?): String? {
+    override fun getString(key: String?, defValue: String?): String {
         return runBlocking {
             prefDataStore.data
                 .catch { emit(emptyPreferences()) }
                 .map {
                     it[stringPreferencesKey(key!!)] ?: defValue
-                }.first()
+                }.first().toString()
         }
     }
 }

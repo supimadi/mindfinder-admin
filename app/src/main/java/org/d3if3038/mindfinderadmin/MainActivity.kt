@@ -1,7 +1,6 @@
 package org.d3if3038.mindfinderadmin
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
