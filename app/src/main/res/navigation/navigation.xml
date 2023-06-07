@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="org.d3if3038.mindfinderadmin.ui.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome"/>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="org.d3if3038.mindfinderadmin.ui.history.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history"/>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="org.d3if3038.mindfinderadmin.ui.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

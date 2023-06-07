@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MindFinder Admin</string>
+    <string name="belum_ada_data">Belum ada data.</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="token_admin_prefrences">token_admin_preferences</string>
+    <string name="token_admin">Token</string>
+    <string name="penjelasan_token">Kode untuk memperbarui data dan sebagai kode unik psikolog.</string>
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="welcome_image">welcome image</string>
+    <string name="hasil_test">Hasil Test</string>
+    <string name="welcome_desc">Melihat semua data hasil test, dan detail hasil. \nJangan lupa untuk membuat token sebelum memulai.</string>
+</resources>
