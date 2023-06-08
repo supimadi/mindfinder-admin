@@ -13,13 +13,15 @@ import org.d3if3038.mindfinderadmin.model.PersonalityEntity
 
 class HistoryViewModel : ViewModel() {
     private val firebaseDb = Firebase.firestore
+    private var token: String = ""
 
-    private val personalityTestResult = MutableLiveData<MutableList<PersonalityEntity>>(
-        mutableListOf()
-    )
+    private val personalityTestResult = MutableLiveData<List<PersonalityEntity>>()
 
+    fun setToken(token: String) {
+        this.token = token
+    }
 
-    fun fetchTestResult(token: String) = viewModelScope.launch {
+    fun fetchTestResult() = viewModelScope.launch {
         withContext(Dispatchers.IO) {
             val firebaseDocument = firebaseDb.collection("personalities_result_${token}")
             firebaseDocument.get().addOnSuccessListener {
@@ -34,6 +36,26 @@ class HistoryViewModel : ViewModel() {
         }
     }
 
-    fun getTestResult() : LiveData<MutableList<PersonalityEntity>> = personalityTestResult
+    fun deleteTestResult(index: Int) = viewModelScope.launch {
+        withContext(Dispatchers.IO) {
+            if (personalityTestResult.value == null || personalityTestResult.value!!.isEmpty()) {
+                return@withContext
+            }
+
+            val documentId = personalityTestResult.value!![index].documentId!!
+            firebaseDb.collection("personalities_result_${token}")
+                .document(documentId)
+                .delete()
+                .addOnSuccessListener {
+                    val data = personalityTestResult.value!!.toMutableList()
+                    data.removeAt(index)
+
+                    personalityTestResult.value = data
+                }
+
+        }
+    }
+
+    fun getTestResult() : LiveData<List<PersonalityEntity>> = personalityTestResult
 
 }

@@ -11,8 +11,8 @@
     <string name="hasil_test">Hasil Test</string>
     <string name="welcome_desc">Melihat semua data hasil test, dan detail hasil. \nJangan lupa untuk membuat token sebelum memulai.</string>
     <string name="type_d">Dominance</string>
-    <string name="wanita">wanita</string>
-    <string name="pria">pria</string>
+    <string name="wanita">Wanita</string>
+    <string name="pria">Pria</string>
     <string name="type_i">Influence</string>
     <string name="type_s">Steadiness</string>
     <string name="type_c">Compliance</string>

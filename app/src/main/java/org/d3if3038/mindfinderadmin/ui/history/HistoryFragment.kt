@@ -1,6 +1,7 @@
 package org.d3if3038.mindfinderadmin.ui.history
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,9 +36,18 @@ class HistoryFragment : Fragment() {
 
         val swipeHandler = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-//                viewModel.deletePersonalityData(viewHolder.adapterPosition)
+                viewModel.deleteTestResult(viewHolder.adapterPosition)
             }
 
+        }
+
+        viewModel.setToken(
+            settingDataStore.getString(getString(R.string.token_admin_prefrences), "")
+        )
+        viewModel.getTestResult().observe(viewLifecycleOwner) {
+            binding.emptyView.visibility = if (it.isEmpty()) View.VISIBLE else View.INVISIBLE
+
+            historyAdapter.submitList(it)
         }
 
         with(binding.historyRecycleView) {
@@ -55,13 +65,6 @@ class HistoryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.getTestResult().observe(viewLifecycleOwner) {
-            binding.emptyView.visibility = if (it.isEmpty()) View.VISIBLE else View.INVISIBLE
-
-            historyAdapter.submitList(it)
-        }
-        viewModel.fetchTestResult(
-            settingDataStore.getString(getString(R.string.token_admin_prefrences), "")
-        )
+        viewModel.fetchTestResult()
     }
 }
