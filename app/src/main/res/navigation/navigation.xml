@@ -14,9 +14,31 @@
         android:id="@+id/historyFragment"
         android:name="org.d3if3038.mindfinderadmin.ui.history.HistoryFragment"
         android:label="HistoryFragment"
-        tools:layout="@layout/fragment_history"/>
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="org.d3if3038.mindfinderadmin.ui.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="org.d3if3038.mindfinderadmin.ui.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            app:argType="integer" />
+        <argument
+            android:name="isMale"
+            app:argType="boolean" />
+        <argument
+            android:name="personalityType"
+            app:argType="org.d3if3038.mindfinderadmin.model.PersonalityCategories" />
+    </fragment>
 </navigation>

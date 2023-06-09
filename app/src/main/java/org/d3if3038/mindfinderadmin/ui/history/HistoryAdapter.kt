@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -58,7 +60,14 @@ class HistoryAdapter : ListAdapter<PersonalityEntity, HistoryAdapter.ViewHolder>
         fun bind(item: PersonalityEntity) = with(binding) {
 
             this.root.setOnClickListener {
-                Log.d("VIEW HOLDER", "diclick bang ${item.fullName}!")
+                Navigation.findNavController(this.root).navigate(
+                    HistoryFragmentDirections.actionHistoryFragmentToResultFragment(
+                        item.fullName!!,
+                        item.age!!,
+                        item.isMale!!,
+                        item.personalityType!!
+                    )
+                )
             }
 
             val gender = root.context.getString(

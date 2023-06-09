@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import org.d3if3038.mindfinderadmin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

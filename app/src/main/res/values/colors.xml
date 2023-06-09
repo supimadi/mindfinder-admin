@@ -19,6 +19,9 @@
     <color name="orange_600">#FF7E1C</color>
     <color name="orange_500">#F28705</color>
     <color name="orange_200">#F5AF4F</color>
+
+    <color name="orange_100">#FFDE95</color>
+
     <color name="orange_opaque">#FAEFE4</color>
 
     <color name="red_700">#A12927</color>

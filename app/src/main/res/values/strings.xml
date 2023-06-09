@@ -3,19 +3,30 @@
     <string name="belum_ada_data">Belum ada data.</string>
     <string name="home">Home</string>
     <string name="setting">Setting</string>
+
     <string name="token_admin_prefrences">token_admin_preferences</string>
     <string name="token_admin">Token</string>
     <string name="penjelasan_token">Kode untuk memperbarui data dan sebagai kode unik psikolog.</string>
+
     <string name="selamat_datang">Selamat Datang</string>
     <string name="welcome_image">welcome image</string>
     <string name="hasil_test">Hasil Test</string>
     <string name="welcome_desc">Melihat semua data hasil test, dan detail hasil. \nJangan lupa untuk membuat token sebelum memulai.</string>
-    <string name="type_d">Dominance</string>
     <string name="wanita">Wanita</string>
     <string name="pria">Pria</string>
+
+    <string name="type_d">Dominance</string>
     <string name="type_i">Influence</string>
     <string name="type_s">Steadiness</string>
     <string name="type_c">Compliance</string>
+
     <string name="name_history_template">%1$s | %2$d Tahun | %3$s</string>
     <string name="result_history_template">Jenis Kepribadian: %1$s</string>
+    <string name="personality_illustration">Personality illustration.</string>
+
+    <string name="personality_d">Orang-orang dengan kepribadian Dominance memiliki kecenderungan karakter yang dominan, kuat, dengan ego yang tinggi. They are independent and risk taker. Mereka mudah merasa bosan dengan rutinitas, menyukai tantangan dan inovasi. Kepribadian DISC ini juga menyukai authority, responsibility, decision making, problem solving, multi tasking, maupun hal-hal lain yang membuatnya menjadi lebih dominan.</string>
+    <string name="personality_i">Karakter DISC ini memiliki pengaruh yang besar bagi sekitarnya. Kepercayaan dirinya, antusiasmenya, selera humornya, dan optimismenya membawa semangat bagi lingkungannya. Sebagai negosiator yang handal, orang-orang dengan kepribadian Influence memiliki kemampuan persuasif yang bagus. Mereka menyukai popularitas, sehingga mereka sulit menerima penolakan dari orang lain.</string>
+    <string name="personality_s">Konsisten, tenang, dan sabar adalah beberapa karakter yang menggambarkan kepribadian DISC yang satu ini. Sebaliknya, orang-orang dengan kepribadian Steadiness sulit menerima perubahan dan butuh waktu lama untuk menyesuaikan diri dengan lingkungan baru. Maka, mereka menyukai lingkungan yang memberi rasa aman tanpa perubahan yang mendadak.</string>
+    <string name="personality_c">Orang-orang berkarakter Compliance biasanya tekun, sistematis, teliti, cermat, fokus pada ketepatan dan kualitas. Cenderung analitis dan kritis, sosok kepribadian DISC ini suka mengejar kualitas dengan standar yang tinggi dan mengerjakan tugas-tugas yang rinci. Karenanya, mereka menyukai batasan, prosedur, dan metode yang jelas.</string>
+    <string name="page_title">MindFinder Admin</string>
 </resources>
