@@ -38,7 +38,6 @@ class HistoryFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 viewModel.deleteTestResult(viewHolder.adapterPosition)
             }
-
         }
 
         viewModel.setToken(

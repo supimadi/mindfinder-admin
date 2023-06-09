@@ -1,6 +1,7 @@
 package org.d3if3038.mindfinderadmin.ui.history
 
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -55,6 +56,11 @@ class HistoryAdapter : ListAdapter<PersonalityEntity, HistoryAdapter.ViewHolder>
         )
 
         fun bind(item: PersonalityEntity) = with(binding) {
+
+            this.root.setOnClickListener {
+                Log.d("VIEW HOLDER", "diclick bang ${item.fullName}!")
+            }
+
             val gender = root.context.getString(
                 if (item.isMale!!) R.string.pria else R.string.wanita
             )
