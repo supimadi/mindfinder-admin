@@ -1,10 +1,12 @@
 package org.d3if3038.mindfinderadmin.ui.history
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.snapshots
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +21,26 @@ class HistoryViewModel : ViewModel() {
 
     fun setToken(token: String) {
         this.token = token
+    }
+
+    fun connectRealtimeDb() {
+        firebaseDb.collection("personalities_result_${token}")
+            .addSnapshotListener { value, error ->
+                if (error != null) {
+                    Log.w("FIREBASE", "Listen failed.", error)
+                    return@addSnapshotListener
+                }
+
+                if (value != null) {
+                    val d: MutableList<PersonalityEntity> = mutableListOf()
+
+                    value.documents.forEach { doc ->
+                        d.add(doc.toObject(PersonalityEntity::class.java)!!)
+                    }
+
+                    personalityTestResult.value = d
+                }
+            }
     }
 
     fun fetchTestResult() = viewModelScope.launch {

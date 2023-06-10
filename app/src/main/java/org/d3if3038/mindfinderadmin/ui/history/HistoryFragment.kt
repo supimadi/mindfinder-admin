@@ -43,6 +43,7 @@ class HistoryFragment : Fragment() {
         viewModel.setToken(
             settingDataStore.getString(getString(R.string.token_admin_prefrences), "")
         )
+        viewModel.connectRealtimeDb()
         viewModel.getTestResult().observe(viewLifecycleOwner) {
             binding.emptyView.visibility = if (it.isEmpty()) View.VISIBLE else View.INVISIBLE
             binding.progressCircular.visibility = View.GONE
@@ -64,7 +65,7 @@ class HistoryFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.fetchTestResult()
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        viewModel.fetchTestResult()
+//    }
 }
