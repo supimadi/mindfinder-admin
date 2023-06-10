@@ -29,12 +29,10 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.menu_main_result -> {
-                    // Respond to navigation item 2 click
                     navController.navigate(R.id.historyFragment)
                     true
                 }
                 R.id.menu_main_setting -> {
-                    // Respond to navigation item 2 click
                     navController.navigate(R.id.settingsFragment)
                     true
                 }

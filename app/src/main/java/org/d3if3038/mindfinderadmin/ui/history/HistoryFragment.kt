@@ -45,6 +45,7 @@ class HistoryFragment : Fragment() {
         )
         viewModel.getTestResult().observe(viewLifecycleOwner) {
             binding.emptyView.visibility = if (it.isEmpty()) View.VISIBLE else View.INVISIBLE
+            binding.progressCircular.visibility = View.GONE
 
             historyAdapter.submitList(it)
         }
